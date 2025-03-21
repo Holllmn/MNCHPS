@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* CSS Document */
+
+.poiret-one-regular {
+  font-family: "Poiret One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* General */
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: 'Poiret One', serif;
+    margin: 0;
+    padding: 0;
+    color: #2e2e2e;
+    z-index: 10;
+}
+
+/* Contenedor principal con Grid */
+#contenedor {
+    width: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 10vh 30vh 40vh 10vh;
+    gap: 5px;
+
+}
+
+#video {
+    position: fixed;  /* Se mantiene fijo como fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  /* Lo envía al fondo */
+}
+/* HEADER */
+header {
+
+    width: auto;
+    background-color: #F2D5F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    font-family: Poiret One, serif;
+    padding: 15px;
+    border-radius: 10px;
+    grid-row: 1 / 2;
+}
+
+/* BOTÓN */
+.boton {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F2D5F8;
+    background-color: #7D426C;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton:hover {
+    background-color: #461339;
+    transform: scale(1.1);
+}
+
+/* NAV */
+nav {
+    width: auto;
+    background-color: #7F7CAF;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    grid-row: 2 / 3;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #F2D5F8;
+}
+
+/* GALERÍA DE IMÁGENES */
+#galeria {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+    gap: 10px; /* Espacio entre imágenes */
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Scroll fluido */
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de scroll en Edge/IE */
+    grid-row: 3 / 4;
+}
+
+/* Oculta la barra de scroll en Chrome y Safari */
+#contenedor::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tarjetas de imagen */
+.grid-item {
+    flex: 0 0 auto; /* Evita que se estiren */
+    height: 200px;
+    width: 250px; /* Ajusta el ancho de cada imagen */
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: center; /* Centra cada imagen en el scroll */
+}
+
+/* Efecto hover */
+.grid-item:hover {
+    transform: scale(1.1); /* Se agranda solo un poco */
+}
+
+
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* CONTENEDOR PRINCIPAL DE SECCIONES */
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    grid-row: 4 / 5;
+}
+
+section, aside {
+    background: #7b0828;
+    color: white;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    width:300px;
+    height: 200px;
+}
+
+section {
+    flex: 2;
+    border-left: 10px solid #ff4081;
+    
+}
+
+aside {
+    flex: 1;
+    border-left: 10px solid #6200ea;
+}
+
+section img, aside img {
+    flex: 0 0 auto; /* Evita que se estiren */
+    width: 250px; /* Ajusta el ancho de cada imagen */
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: center; /* Centra cada imagen en el scroll */
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background: #7F7CAF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: auto; /* Empuja el footer hacia abajo */
+    grid-row: 5 / 6;
+}
